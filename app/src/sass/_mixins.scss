@@ -1,0 +1,31 @@
+@mixin for-phone-small() {
+	@media only screen and (min-width: 320px) { @content; }
+}
+
+@mixin for-phone() {
+	@media only screen and (min-width: 480px) { @content; }
+}
+
+@mixin for-tablet() {
+	@media only screen and (min-width: 768px) { @content; }
+}
+
+@mixin for-desktop() {
+	@media only screen and (min-width: 992px) { @content; }
+}
+
+@mixin for-desktop-large() {
+	@media only screen and (min-width: 1200px) { @content; }
+}
+
+@mixin for-IE {
+	@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content; }
+}
+
+@mixin for-edge {
+	@supports (-ms-ime-align:auto) { @content; }
+}
+
+@mixin for-safari {
+	@media not all and (min-resolution: 0.001dpcm) { @content; }
+}
