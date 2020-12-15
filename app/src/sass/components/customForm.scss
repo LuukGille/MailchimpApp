@@ -1,0 +1,28 @@
+.customForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.customInput {
+    font-size: 2em;
+    padding: 15px;
+    outline: 0;
+    background-color: transparent;
+    border-width: 0 0 4px;
+    color: rgba(128, 255, 128, 0.8);
+    border-color: rgba(128, 255, 128, 0.4);
+
+    &:focus {
+        border-color: rgba(128, 255, 128, 0.8);
+        text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);;
+    }
+}
+
+.customButton {
+    font-size: 3em;
+    padding: 10px;
+    color: rgba(128, 255, 128, 0.8);
+    background-color: black;
+    outline: 0;
+    border: 0;
+}

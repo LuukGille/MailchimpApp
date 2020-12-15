@@ -1,0 +1,17 @@
+html {
+    max-height:100vh;
+    overflow: hidden;
+}
+
+//basic styling
+@import "../src/sass/colors";
+@import "../src/sass/mixins";
+@import "../src/sass/normalize";
+@import "../src/sass/typography";
+
+//components
+@import "../src/sass/components/customForm.scss";
+@import "../src/sass/components/404.scss";
+
+//pages
+@import "../src/sass/pages/pageNotFound.scss";
