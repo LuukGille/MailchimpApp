@@ -1,12 +1,10 @@
 const CustomForm = ({ status, message, onValidated }) => {
-  let email, name;
+  let email;
   const submit = () =>
     email &&
-    name &&
     email.value.indexOf("@") > -1 &&
     onValidated({
       EMAIL: email.value,
-      NAME: name.value
     });
 
   return (
@@ -19,7 +17,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         />
       )}
       {status === "success" && (
-        <div
+        <div className="customFormSucces"
           style={{ color: "green" }}
           dangerouslySetInnerHTML={{ __html: message }}
         />
