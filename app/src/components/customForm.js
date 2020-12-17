@@ -9,26 +9,23 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <div className="customForm">
-      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+      {status === "sending" && <div className="customFormSending">sending...</div>}
       {status === "error" && (
-        <div
-          style={{ color: "red" }}
+        <div className="customFormError"
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
       {status === "success" && (
-        <div className="customFormSucces"
-          style={{ color: "green" }}
+        <div className="customFormSuccess"
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
       <input className="customInput"
         ref={node => (email = node)}
         type="email"
+        tabindex="1"
       />
-      <br />
       <button className="customButton" onClick={submit}>
-        Subscribe
       </button>
     </div>
   );

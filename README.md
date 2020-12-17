@@ -98,7 +98,30 @@ const CustomForm = ({ status, message, onValidated }) => {
 export default CustomForm
 ```
 
-If your having this your `App.js` looks a little bit diffrent than the basic implementation. 
+#### How to use styling in your custom form
+As you can see in the example above I have a couple classnames. I also use SCSS in this application so here are a couple steps how you can implement SCSS styling. 
+
+ - first go to back to your `CMD` and place the follwowing line 
+ ```sh
+ npm i node-sass --save-dev
+ ```
+ 
+Now you can create a new file in the `src` called `app.scss`. Here you can implement all your styling files like this. And it would be compiled and shown on your application.
+
+> If you don't know how to use SCSS look at this [SCSS tutorials](https://www.w3schools.com/react/react_sass.asp)
+
+```sh
+//basic styling
+@import "../src/sass/colors";
+@import "../src/sass/mixins";
+@import "../src/sass/normalize";
+@import "../src/sass/typography";
+
+//components
+@import "../src/sass/components/customForm.scss";
+```
+Now you have to implement the `app.scss` in the `app.js` and there are a couple other changes that are diffrent from the basic implementation. Best thing about implementing and include the other syling files is that you don't have to import it somewhere else.
+
 ```sh
 import './app.scss'
 import CustomForm from './components/customForm.js'
@@ -111,9 +134,66 @@ function App() {
 }
 
 export default App;
-
 ```
 
+### style your status information from the Mailchimp form
+Now you can create your own styling file for your component, for example `customForm.scss`.
+If you wanted to create your own status styling for sending, error and success you have to implement te following code:
+```sh
+      {status === "sending" && <div className="customFormSending">sending...</div>}
+      {status === "error" && (
+        <div className="customFormError"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      {status === "success" && (
+        <div className="customFormSuccess"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+```
 
-> I wanted to create a page not found (404) and in that page I want to give people a option to subscribe to out news letter and sign up with there e-mail. I have added styling to the page
+In this peace of code you can fill in the className and use it in the `customForm.scss` file. This part you can paste in your `customForm.js` like this.
+```sh
+const CustomForm = ({ status, message, onValidated }) => {
+  let email;
+  const submit = () =>
+    email &&
+    email.value.indexOf("@") > -1 &&
+    onValidated({
+      EMAIL: email.value,
+    });
+
+  return (
+    <div className="customForm">
+      {status === "sending" && <div className="customFormSending">sending...</div>}
+      {status === "error" && (
+        <div className="customFormError"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      {status === "success" && (
+        <div className="customFormSuccess"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
+      )}
+      <input className="customInput"
+        ref={node => (email = node)}
+        type="email"
+        tabindex="1"
+      />
+      <button className="customButton" onClick={submit}>
+      </button>
+    </div>
+  );
+};
+
+export default CustomForm
+      )}
+```
+
+And there you have it, your own custom email signup form in your React application created with Mailchamp.
+
+
+> For my appliaction I created a page not found (404) and in that page I want to give people a option to subscribe to our news letter and sign up with there e-mail. I have added styling to the page
 that you can find back on my repository on [github](https://github.com/LuukGille/MailchimpApp).
