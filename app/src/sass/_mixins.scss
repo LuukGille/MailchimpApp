@@ -18,6 +18,10 @@
 	@media only screen and (min-width: 1200px) { @content; }
 }
 
+@mixin for-desktop-extra-large() {
+	@media only screen and (min-width: 1200px) { @content; }
+}
+
 @mixin for-IE {
 	@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content; }
 }

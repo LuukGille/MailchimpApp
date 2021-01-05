@@ -3,6 +3,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .pageContainer {
@@ -12,10 +16,18 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    height: 100vh;
-    width: 100%;
+    background-position-x: -7px;
+    height: 600px;
+
+    @media only screen and (min-width: 1550px) { 
+        height: 760px;
+     }
 }
 
 .errorContainer {
-    width: 845px;
+    width: 800px;
+
+    @media only screen and (min-width: 1550px) { 
+        width: 1010px;
+     }
 }

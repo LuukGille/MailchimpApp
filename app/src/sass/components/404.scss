@@ -1,8 +1,8 @@
 .pageError {
-    min-height: 500px;
-
-    margin-top: 35px;
-    margin-left: 15px;
+    width: 657px;
+    margin-left: 70px;
+    min-height: 397px;
+    margin-top: 29px;
     box-sizing: border-box;
     background-color: #000000;
     background-image: radial-gradient(#11581E, #041607);
@@ -13,14 +13,21 @@
     color: rgba(128, 255, 128, 0.8);
     text-shadow:
         0 0 1ex rgba(51, 255, 51, 1),
-        0 0 2px rgba(255, 255, 255, 0.8)
+        0 0 2px rgba(255, 255, 255, 0.8);
+
+    @media only screen and (min-width: 1550px) { 
+        width: 828px;
+        margin-left: 91px;
+        min-height: 500px;
+        margin-top: 38px;
+     }
 }
 
 .overlay {
   pointer-events: none;
   position: absolute;
-  width: 830px;
-  height: 66%;
+  width: 657px;
+  height: 398px;
   background:
       repeating-linear-gradient(
       180deg,
@@ -29,6 +36,11 @@
       rgba(0, 0, 0, 0) 100%);
   background-size: auto 4px;
   z-index: 1;
+
+  @media only screen and (min-width: 1550px) { 
+    width: 829px;
+    height: 498px;
+ }
 }
 
 .overlay::before {
@@ -61,11 +73,12 @@
 .terminal {
   box-sizing: inherit;
   position: absolute;
-  width: 55%;
-  height: 100%;
-  max-width: 100%;
+  width: 650px;
   padding: 3rem;
   text-transform: uppercase;
+  @media only screen and (min-width: 1550px) { 
+    width: 870px;
+ }
 }
 
 .output {
