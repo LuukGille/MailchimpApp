@@ -15,7 +15,7 @@
         0 0 1ex rgba(51, 255, 51, 1),
         0 0 2px rgba(255, 255, 255, 0.8);
 
-    @media only screen and (min-width: 1550px) { 
+    @include for-desktop-extra-large { 
         width: 828px;
         margin-left: 91px;
         min-height: 500px;
@@ -37,10 +37,10 @@
   background-size: auto 4px;
   z-index: 1;
 
-  @media only screen and (min-width: 1550px) { 
-    width: 829px;
-    height: 498px;
- }
+  @include for-desktop-extra-large {
+     width: 829px;
+     height: 498px;
+  }
 }
 
 .overlay::before {
@@ -76,7 +76,7 @@
   width: 650px;
   padding: 3rem;
   text-transform: uppercase;
-  @media only screen and (min-width: 1550px) { 
+  @include for-desktop-extra-large { 
     width: 870px;
  }
 }

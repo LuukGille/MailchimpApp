@@ -19,7 +19,7 @@
     background-position-x: -7px;
     height: 600px;
 
-    @media only screen and (min-width: 1550px) { 
+    @include for-desktop-extra-large { 
         height: 760px;
      }
 }
@@ -27,7 +27,7 @@
 .errorContainer {
     width: 800px;
 
-    @media only screen and (min-width: 1550px) { 
+    @include for-desktop-extra-large { 
         width: 1010px;
      }
 }
